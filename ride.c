@@ -18,9 +18,9 @@ int main(void)
 		return 0;
 	}
 	for(i = 0; i < strlen(input); i++)
-		sum1 *= ((input[i] - 64) % 47);
+		sum1 = (((input[i] - 64)) * sum1 % 47);
 	for(i = 0; i < strlen(output); i++)
-		sum2 *= ((output[i] - 64) % 47);
+		sum2 = (((output[i] - 64) * sum2) % 47);
 	if (sum1  == sum2)
     		fprintf (fout, "GO\n");
 	else
